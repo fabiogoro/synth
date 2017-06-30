@@ -1,4 +1,4 @@
-#N canvas 376 133 1362 699 10;
+#N canvas 2 48 1362 699 10;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-response 32 float 0;
 #X coords 0 1 31 0 256 140 1 0 0;
@@ -121,8 +121,9 @@
 #X obj 561 221 tabwrite~ \$0-response;
 #X msg 441 94 read \$1 \$2-coeff;
 #X obj 442 74 pack s \$0;
+#X obj 538 260 iemlib/FIR~ \$0-coeff 64;
 #X connect 2 0 16 0;
-#X connect 2 0 15 1;
+#X connect 2 0 25 0;
 #X connect 3 0 22 0;
 #X connect 5 0 21 0;
 #X connect 6 0 22 0;
@@ -142,4 +143,5 @@
 #X connect 21 0 8 0;
 #X connect 23 0 1 0;
 #X connect 24 0 23 0;
+#X connect 25 0 15 0;
 #X coords 0 -1 1 1 300 350 2 100 100;

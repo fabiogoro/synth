@@ -1,4 +1,4 @@
-#N canvas 430 68 1362 699 10;
+#N canvas 2 48 1362 699 10;
 #X obj 1 339 cnv 15 1200 10 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 1191 351 cnv 15 10 350 empty empty empty 20 12 0 14 -162280
@@ -62,7 +62,6 @@
 #X obj 509 364 aditiva;
 #X obj 91 754 adsr;
 #X obj 90 1020 fir;
-#X obj 46 1387 dac~;
 #X connect 13 0 18 0;
 #X connect 13 0 19 0;
 #X connect 13 1 18 1;
@@ -80,5 +79,3 @@
 #X connect 19 2 20 2;
 #X connect 20 0 21 0;
 #X connect 21 0 16 0;
-#X connect 21 0 22 0;
-#X connect 21 0 22 1;
