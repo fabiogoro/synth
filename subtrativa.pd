@@ -1,0 +1,78 @@
+#N canvas 976 68 941 1012 10;
+#X obj 369 116 bng 15 250 50 0 empty empty /ow/ 17 7 0 10 -262144 -1
+-1;
+#X floatatom 128 123 5 0 0 0 f1 - -, f 5;
+#X floatatom 128 143 5 0 0 0 f2 - -, f 5;
+#X floatatom 128 163 5 0 0 0 f3 - -, f 5;
+#X obj 40 39 r vogal;
+#X obj 369 156 bng 15 250 50 0 empty empty /oo/ 17 7 0 10 -262144 -1
+-1;
+#X obj 369 196 bng 15 250 50 0 empty empty /u/ 17 7 0 10 -262144 -1
+-1;
+#X obj 369 236 bng 15 250 50 0 empty empty /a/ 17 7 0 10 -262144 -1
+-1;
+#X obj 369 276 bng 15 250 50 0 empty empty /uh/ 17 7 0 10 -262144 -1
+-1;
+#X obj 369 316 bng 15 250 50 0 empty empty /er/ 17 7 0 10 -262144 -1
+-1;
+#X obj 369 356 bng 15 250 50 0 empty empty /ae/ 17 7 0 10 -262144 -1
+-1;
+#X obj 369 396 bng 15 250 50 0 empty empty /i/ 17 7 0 10 -262144 -1
+-1;
+#X obj 196 466 noise~;
+#X obj 230 711 dac~;
+#X obj 250 551 bp~ 500 10;
+#X obj 330 551 bp~ 500 10;
+#X obj 218 629 +~;
+#X obj 245 662 +~;
+#X text 487 544 O receiver vogal no topo do patch precida ter \$0?
+;
+#X floatatom 198 123 5 0 0 0 q1 - -, f 5;
+#X floatatom 198 143 5 0 0 0 q2 - -, f 5;
+#X floatatom 198 163 5 0 0 0 q3 - -, f 5;
+#X obj 40 68 unpack f f f f;
+#X msg 528 131 \; vogal 570 840 2410 500;
+#X obj 170 551 bp~ 500 10;
+#X msg 528 171 \; vogal 300 870 2240 500;
+#X msg 528 211 \; vogal 440 1090 2240 500;
+#X msg 528 251 \; vogal 730 1090 2440 500;
+#X msg 528 291 \; vogal 520 1190 2390 500;
+#X msg 528 331 \; vogal 490 1350 1690 500;
+#X msg 528 371 \; vogal 660 1720 2410 500;
+#X msg 528 411 \; vogal 390 1990 2550 500;
+#X text 378 461 <-"aplicá-los a um sinal harmônico espectralmente
+rico (use um pulso periódico para isso)" Isso quer dizer que o noise
+não pode ser usado?;
+#X floatatom 128 183 5 0 0 0 f4 - -, f 5;
+#X floatatom 198 183 5 0 0 0 q4 - -, f 5;
+#X connect 0 0 23 0;
+#X connect 1 0 24 1;
+#X connect 2 0 14 1;
+#X connect 3 0 15 1;
+#X connect 4 0 22 0;
+#X connect 5 0 25 0;
+#X connect 6 0 26 0;
+#X connect 7 0 27 0;
+#X connect 8 0 28 0;
+#X connect 9 0 29 0;
+#X connect 10 0 30 0;
+#X connect 11 0 31 0;
+#X connect 12 0 14 0;
+#X connect 12 0 15 0;
+#X connect 12 0 24 0;
+#X connect 14 0 16 1;
+#X connect 15 0 17 1;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
+#X connect 17 0 13 1;
+#X connect 19 0 24 2;
+#X connect 20 0 14 2;
+#X connect 21 0 15 2;
+#X connect 22 0 1 0;
+#X connect 22 1 2 0;
+#X connect 22 2 3 0;
+#X connect 22 3 19 0;
+#X connect 22 3 20 0;
+#X connect 22 3 21 0;
+#X connect 24 0 16 0;
+#X coords 0 -1 1 1 320 320 2 100 100;
