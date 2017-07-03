@@ -1,8 +1,8 @@
-#N canvas 2 48 1362 699 10;
+#N canvas 38 68 1310 699 10;
 #X obj 567 167 unpack;
 #X obj 567 308 *~;
 #X obj 566 114 inlet;
-#X obj 635 120 inlet;
+#X obj 686 79 inlet;
 #X obj 114 129 vradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X text 135 129 seno;
@@ -12,7 +12,7 @@
 #X obj 113 346 sel 0 1 2 3;
 #X obj 463 385 outlet~;
 #X obj 522 184 outlet;
-#X obj 665 167 outlet;
+#X obj 688 144 outlet;
 #X obj 567 211 phasor~ 440;
 #X obj 910 228 until;
 #X obj 910 256 f;
@@ -32,12 +32,12 @@
 #X restore 280 128 graph;
 #X obj 567 279 tabread~ \$0-wave;
 #X obj 208 263 tgl 15 0 empty empty on/off 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 567 140 spigot;
 #X obj 878 496 until;
 #X obj 801 533 f;
 #X obj 915 532 + 1;
-#X obj 899 588 sel 0;
+#X obj 924 592 sel 0;
 #X obj 838 510 f 0;
 #X obj 898 566 mod 64;
 #X obj 782 561 t f f f;
@@ -52,7 +52,7 @@
 #X obj 902 156 t b f b b;
 #X obj 823 406 f;
 #X obj 824 331 mod 2;
-#X obj 785 357 expr if($f1>$f2 \, 1 \, 0);
+#X obj 764 356 expr if($f1>$f2 \, 1 \, 0);
 #X obj 785 379 sel 1;
 #X obj 122 421 f 0;
 #X obj 182 421 f 2;
@@ -69,7 +69,7 @@
 #X obj 845 106 expr if($f2 \, 22050/$f1 \, 1);
 #X obj 12 420 f 1;
 #X obj 36 419 f 0;
-#X obj 600 618 expr (sin(6.28319*$f1*$f2/63)*$f4+$f3);
+#X obj 600 630 expr (sin(6.28319*$f1*$f2/63)*$f4+$f3);
 #X obj 566 236 *~ 63;
 #X obj 208 312 s \$0-off;
 #X obj 605 88 r \$0-off;
@@ -86,12 +86,14 @@
 #X obj 845 80 r \$0-f0;
 #X obj 936 364 expr pow(1/$f1 \, $f2)*pow($f3 \, $f4);
 #X obj 936 386 s \$0-amp;
-#X obj 842 617 r \$0-amp;
+#X obj 890 633 r \$0-amp;
+#X obj 689 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 52 0;
 #X connect 0 1 1 1;
 #X connect 1 0 10 0;
 #X connect 2 0 20 0;
-#X connect 3 0 12 0;
+#X connect 3 0 74 0;
 #X connect 4 0 9 0;
 #X connect 9 0 55 0;
 #X connect 9 1 42 0;
@@ -171,4 +173,5 @@
 #X connect 70 0 53 0;
 #X connect 71 0 72 0;
 #X connect 73 0 56 3;
+#X connect 74 0 12 0;
 #X coords 0 -1 1 1 400 200 2 100 100;
