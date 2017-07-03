@@ -1,27 +1,27 @@
 #N canvas 2 48 1362 699 10;
 #X obj 1 339 cnv 15 1200 10 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 1191 351 cnv 15 10 350 empty empty empty 20 12 0 14 -162280
+#X obj 1191 351 cnv 15 10 600 empty empty empty 20 12 0 14 -162280
 -66577 0;
-#X obj 1191 713 cnv 15 10 300 empty empty empty 20 12 0 14 -99865 -66577
+#X obj 1191 914 cnv 15 10 300 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 1 0 cnv 15 10 350 empty empty Controle 20 12 0 14 -228856 -66577
 0;
-#X obj 1 351 cnv 15 10 350 empty empty Síntese 20 12 0 14 -162280
+#X obj 1 351 cnv 15 10 600 empty empty Síntese 20 12 0 14 -162280
 -66577 0;
-#X obj 1 713 cnv 15 10 300 empty empty Envelope 20 12 0 14 -99865 -66577
+#X obj 1 914 cnv 15 10 300 empty empty Envelope 20 12 0 14 -99865 -66577
 0;
 #X obj 856 -1 cnv 15 10 350 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 1 702 cnv 15 1200 10 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 1 903 cnv 15 1200 10 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 1 1003 cnv 15 1200 10 empty empty empty 20 12 0 14 -99865 -66577
+#X obj 1 1204 cnv 15 1200 10 empty empty empty 20 12 0 14 -99865 -66577
 0;
-#X obj 1191 1014 cnv 15 10 400 empty empty empty 20 12 0 14 -1 -66577
+#X obj 1191 1215 cnv 15 10 400 empty empty empty 20 12 0 14 -1 -66577
 0;
-#X obj 1 1014 cnv 15 10 400 empty empty Efeitos 20 12 0 14 -1 -66577
+#X obj 1 1215 cnv 15 10 400 empty empty Efeitos 20 12 0 14 -1 -66577
 0;
-#X obj 1 1404 cnv 15 1200 10 empty empty empty 20 12 0 14 -1 -66577
+#X obj 1 1605 cnv 15 1200 10 empty empty empty 20 12 0 14 -1 -66577
 0;
 #N canvas 38 68 1362 699 play 0;
 #X obj 545 209 dac~;
@@ -30,8 +30,12 @@
 #X obj 727 254 cyclone/cartopol~;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-mag 64 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#A 0 0.0242552 0.137758 0.0474943 0.0324925 0.0238665 0.0188972 0.0157156
+0.0135633 0.0117695 0.010679 0.00966948 0.00882341 0.00812711 0.00761247
+0.0071651 0.00674621 0.00641324 0.00607767 0.00586123 0.00564903 0.00542347
+0.00527943 0.00512226 0.00501679 0.00488075 0.00478795 0.00474003 0.00466682
+0.00462079 0.00457221 0.00454778 0.00454054 0.00452801 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 8 64 0 200 140 1 0 0;
 #X restore 181 119 graph;
 #X obj 678 252 bang~;
@@ -55,24 +59,29 @@
 #X obj 29 31 leitor-midi;
 #X obj 319 8 sequenciador;
 #X obj 881 22 catch~ out;
-#X obj 115 1381 throw~ out;
+#X obj 115 1582 throw~ out;
 #X obj 1191 -2 cnv 15 10 350 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 89 361 oscilador;
 #X obj 509 364 aditiva;
-#X obj 91 754 adsr;
-#X obj 90 1020 fir;
+#X obj 91 955 adsr;
+#X obj 90 1221 fir;
 #X obj 831 366 subtrativa;
+#X obj 116 571 subtrativanoise;
 #X connect 13 0 18 0;
 #X connect 13 0 19 0;
+#X connect 13 0 22 0;
 #X connect 13 1 18 1;
 #X connect 13 1 19 1;
+#X connect 13 1 22 1;
 #X connect 14 0 19 0;
 #X connect 14 0 18 0;
 #X connect 14 0 22 0;
+#X connect 14 0 23 0;
 #X connect 14 1 19 1;
 #X connect 14 1 18 1;
 #X connect 14 1 22 1;
+#X connect 14 1 23 1;
 #X connect 15 0 12 0;
 #X connect 18 0 20 0;
 #X connect 18 1 20 1;
@@ -85,3 +94,6 @@
 #X connect 22 0 20 0;
 #X connect 22 1 20 1;
 #X connect 22 2 20 2;
+#X connect 23 0 20 0;
+#X connect 23 1 20 1;
+#X connect 23 2 20 2;
