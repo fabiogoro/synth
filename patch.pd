@@ -30,12 +30,8 @@
 #X obj 727 254 cyclone/cartopol~;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-mag 64 float 1;
-#A 0 0.0242552 0.137758 0.0474943 0.0324925 0.0238665 0.0188972 0.0157156
-0.0135633 0.0117695 0.010679 0.00966948 0.00882341 0.00812711 0.00761247
-0.0071651 0.00674621 0.00641324 0.00607767 0.00586123 0.00564903 0.00542347
-0.00527943 0.00512226 0.00501679 0.00488075 0.00478795 0.00474003 0.00466682
-0.00462079 0.00457221 0.00454778 0.00454054 0.00452801 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 8 64 0 200 140 1 0 0;
 #X restore 181 119 graph;
 #X obj 678 252 bang~;
@@ -68,12 +64,15 @@
 #X obj 90 1221 fir;
 #X obj 831 366 subtrativa;
 #X obj 116 571 subtrativanoise;
+#X obj 460 959 percursivo;
 #X connect 13 0 18 0;
 #X connect 13 0 19 0;
 #X connect 13 0 22 0;
+#X connect 13 0 23 0;
 #X connect 13 1 18 1;
 #X connect 13 1 19 1;
 #X connect 13 1 22 1;
+#X connect 13 1 23 1;
 #X connect 14 0 19 0;
 #X connect 14 0 18 0;
 #X connect 14 0 22 0;
@@ -84,8 +83,11 @@
 #X connect 14 1 23 1;
 #X connect 15 0 12 0;
 #X connect 18 0 20 0;
+#X connect 18 0 24 0;
 #X connect 18 1 20 1;
+#X connect 18 1 24 1;
 #X connect 18 2 20 2;
+#X connect 18 2 24 2;
 #X connect 19 0 20 0;
 #X connect 19 1 20 1;
 #X connect 19 2 20 2;
@@ -95,5 +97,8 @@
 #X connect 22 1 20 1;
 #X connect 22 2 20 2;
 #X connect 23 0 20 0;
+#X connect 23 0 24 0;
 #X connect 23 1 20 1;
+#X connect 23 1 24 1;
 #X connect 23 2 20 2;
+#X connect 23 2 24 2;
