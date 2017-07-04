@@ -1,0 +1,61 @@
+#N canvas 2 48 1362 699 10;
+#X obj 455 409 vcf~;
+#X floatatom 356 260 5 0 0 0 Q - -, f 5;
+#X obj 356 117 vsl 15 128 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X obj 550 157 +~ 1;
+#X obj 551 178 *~ 0.5;
+#X obj 550 132 osc~ 2;
+#X obj 109 166 hsl 128 15 700 6000 0 0 empty empty Freq_Máxima -2
+-8 0 10 -262144 -1 -1 10400 1;
+#X obj 108 217 hsl 128 15 0 700 0 0 empty empty Freq_Mínima -2 -8
+0 10 -262144 -1 -1 12700 0;
+#X floatatom 688 171 6 0 0 0 - - -, f 6;
+#X obj 688 141 -;
+#X obj 689 114 bang;
+#X obj 426 258 +~ 200;
+#X obj 554 202 *~ 1500;
+#X obj 108 116 hsl 128 15 0.5 4 0 0 empty empty LFO -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 602 454 outlet~;
+#X obj 482 362 inlet~;
+#X obj 558 361 tabwrite~ a;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array a 64 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 7000 64 100 200 140 1 0 0;
+#X restore 143 251 graph;
+#X obj 706 213 bang~;
+#X floatatom 106 238 5 0 0 0 - - -, f 5;
+#X floatatom 105 185 5 0 0 0 - - -, f 5;
+#X floatatom 106 137 5 0 0 0 - - -, f 5;
+#X obj 459 306 zexy/multiplex~;
+#X obj 501 280 r \$0-on;
+#X obj 277 111 tgl 15 0 \$0-on empty on/off 17 7 0 10 -262144 -1 -1
+0 1;
+#X connect 0 0 14 0;
+#X connect 2 0 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 3 0;
+#X connect 6 0 9 0;
+#X connect 6 0 20 0;
+#X connect 7 0 9 1;
+#X connect 7 0 10 0;
+#X connect 7 0 11 1;
+#X connect 7 0 19 0;
+#X connect 9 0 8 0;
+#X connect 9 0 12 1;
+#X connect 10 0 9 0;
+#X connect 11 0 22 1;
+#X connect 12 0 11 0;
+#X connect 13 0 5 0;
+#X connect 13 0 21 0;
+#X connect 15 0 0 0;
+#X connect 18 0 16 0;
+#X connect 22 0 16 0;
+#X connect 22 0 0 1;
+#X connect 23 0 22 0;
+#X coords 0 -1 1 1 300 300 2 100 100;
