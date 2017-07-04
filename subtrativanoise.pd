@@ -1,4 +1,4 @@
-#N canvas 38 68 1362 699 10;
+#N canvas 2 48 1362 699 10;
 #X obj 166 1 inlet;
 #X obj 457 80 inlet;
 #X obj 165 27 spigot;
@@ -31,7 +31,7 @@
 #X obj 164 50 unpack f f;
 #X floatatom 164 72 5 0 0 0 - - -, f 5;
 #X floatatom 233 74 5 0 0 0 - - -, f 5;
-#X obj 111 69 bp~;
+#X obj 30 199 bp~;
 #X floatatom 324 109 5 0 0 0 - - -, f 5;
 #X msg 256 217 10;
 #X msg 296 217 50;
@@ -69,7 +69,7 @@
 #X connect 15 0 16 0;
 #X connect 15 1 17 0;
 #X connect 16 0 18 1;
-#X connect 18 0 28 1;
+#X connect 18 0 24 0;
 #X connect 19 0 18 2;
 #X connect 20 0 19 0;
 #X connect 21 0 19 0;

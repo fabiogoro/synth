@@ -1,43 +1,60 @@
-#N canvas 38 68 1362 699 10;
+#N canvas 2 48 1362 699 10;
 #X obj 411 474 *~;
-#X obj 501 118 inlet~;
+#X obj 498 119 inlet~;
 #X obj 410 506 outlet~;
 #X obj 559 116 inlet;
 #X obj 612 115 inlet;
-#X obj 606 151 outlet;
+#X obj 628 158 outlet;
 #X obj 555 146 outlet;
 #X obj 40 491 vline~;
-#N canvas 2 50 1362 699 (subpatch) 0;
+#N canvas 2 48 1362 699 (subpatch) 0;
 #X array \$0-ad 64 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X coords 0 1 64 -1 200 140 1 0 0;
+#A 0 0.134604 0.134584 0.134564 0.134544 0.134523 0.134503 0.134483
+0.134463 0.134443 0.134423 0.134403 0.134383 0.134363 0.134343 0.134323
+0.134303 0.134283 0.134263 0.134243 0.134223 0.134203 0.134183 0.134163
+0.134143 0.134123 0.134103 0.134083 0.134063 0.134043 0.134023 0.134003
+0.133983 0.133963 0.133943 0.133923 0.133903 0.133883 0.133863 0.133843
+0.133823 0.133803 0.133783 0.133763 0.133743 0.133723 0.133703 0.133683
+0.133663 0.133644 0.133624 0.133604 0.133584 0.133564 0.133544 0.133524
+0.133504 0.133484 0.133464 0.133444 0.133424 0.133405 0.133385 0.133365
+0.133345;
+#X coords 0 2 64 0 200 140 1 0 0;
 #X restore 191 149 graph;
 #X msg 40 465 1 \, 0 0 0.03;
 #X obj 244 470 samplerate~;
-#X obj 259 430 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 259 440 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 118 134 vsl 15 128 0 10 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 0;
+#X obj 118 134 vsl 15 128 5 10 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11400 0;
 #X floatatom 130 273 5 0 0 0 - - -, f 5;
 #X obj 39 516 fexpr~ $x1+$y1[-1]*pow(2 \, -$f2/$f3);
-#X obj 252 350 phasor~ 689.062;
+#X obj 333 389 phasor~ 689.062;
 #X obj 35 599 tabwrite~ \$0-ad;
-#X obj 252 372 *~ 64;
-#X obj 252 394 tabread~ \$0-ad;
+#X obj 333 411 *~ 64;
+#X obj 333 433 tabread~ \$0-ad;
 #X obj 48 545 bang~;
 #X obj 119 109 tgl 15 0 \$0-on empty on/off 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 123 537 r \$0-on;
 #X obj 97 570 spigot;
 #X msg 544 292 stop;
 #X obj 177 108 cnv 15 50 20 empty empty AD 20 12 0 14 -262144 -66577
 0;
+#X msg 511 236 start;
+#X obj 544 448 bang~;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array b 64 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 64 -1 200 140 1 0 0;
+#X restore 729 306 graph;
+#X obj 547 483 tabwrite~ b;
 #X connect 0 0 2 0;
 #X connect 1 0 0 1;
 #X connect 3 0 6 0;
 #X connect 3 0 9 0;
-#X connect 3 0 24 0;
+#X connect 3 0 25 0;
+#X connect 3 0 11 0;
 #X connect 4 0 5 0;
 #X connect 4 0 23 0;
 #X connect 7 0 14 0;
@@ -54,5 +71,6 @@
 #X connect 21 0 22 1;
 #X connect 22 0 16 0;
 #X connect 23 0 14 0;
-#X connect 24 0 14 0;
+#X connect 25 0 14 0;
+#X connect 26 0 28 0;
 #X coords 0 -1 1 1 300 200 2 100 100;
