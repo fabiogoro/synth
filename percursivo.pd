@@ -18,11 +18,7 @@
 #X obj 259 430 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 118 134 vsl 15 128 0 10 0 0 empty empty empty 0 -9 0 10 -262144
-<<<<<<< HEAD
--1 -1 8900 0;
-=======
 -1 -1 0 0;
->>>>>>> e520180e1d463d75b24b74d0414ce1f8ceda6821
 #X floatatom 130 273 5 0 0 0 - - -, f 5;
 #X obj 39 516 fexpr~ $x1+$y1[-1]*pow(2 \, -$f2/$f3);
 #X obj 252 350 phasor~ 689.062;
@@ -30,21 +26,13 @@
 #X obj 252 372 *~ 64;
 #X obj 252 394 tabread~ \$0-ad;
 #X obj 48 545 bang~;
-<<<<<<< HEAD
-#X obj 120 110 tgl 15 0 \$0-on empty on/off 17 7 0 10 -262144 -1 -1
-=======
 #X obj 119 109 tgl 15 0 \$0-on empty on/off 17 7 0 10 -262144 -1 -1
->>>>>>> e520180e1d463d75b24b74d0414ce1f8ceda6821
 0 1;
 #X obj 123 537 r \$0-on;
 #X obj 97 570 spigot;
 #X msg 544 292 stop;
-<<<<<<< HEAD
-#X msg 523 196 start;
-=======
 #X obj 177 108 cnv 15 50 20 empty empty AD 20 12 0 14 -262144 -66577
 0;
->>>>>>> e520180e1d463d75b24b74d0414ce1f8ceda6821
 #X connect 0 0 2 0;
 #X connect 1 0 0 1;
 #X connect 3 0 6 0;
