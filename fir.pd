@@ -1,14 +1,14 @@
-#N canvas 2 48 1362 699 10;
+#N canvas 38 68 1362 699 10;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-response 32 float 0;
-#X coords 0 1 31 0 256 140 1 0 0;
-#X restore 116 304 graph;
+#X coords 0 1 31 0 256 120 1 0 0;
+#X restore 117 281 graph;
 #X obj 441 115 soundfiler;
 #X obj 455 198 inlet~;
 #X obj 543 198 cyclone/cartopol~;
-#N canvas 0 50 450 300 (subpatch) 0;
+#N canvas 38 68 450 300 (subpatch) 0;
 #X array \$0-coeff 64 float 0;
-#X coords 0 1 63 -1 256 140 1 0 0;
+#X coords 0 1 63 -1 256 120 1 0 0;
 #X restore 117 142 graph;
 #X obj 561 120 line~;
 #X obj 529 120 t b;
@@ -144,4 +144,4 @@
 #X connect 23 0 1 0;
 #X connect 24 0 23 0;
 #X connect 25 0 15 0;
-#X coords 0 -1 1 1 300 350 2 100 100;
+#X coords 0 -1 1 1 300 310 2 100 100;
