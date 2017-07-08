@@ -1,4 +1,4 @@
-#N canvas 206 194 1362 699 10;
+#N canvas 203 191 1362 699 10;
 #X obj 1 339 cnv 15 1200 10 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 1191 346 cnv 15 10 600 empty empty empty 20 12 0 14 -162280
@@ -30,13 +30,17 @@
 #X obj 727 254 cyclone/cartopol~;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-mag 64 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#A 0 0.732176 3.26234 0.251516 0.0510132 0.0820412 0.0698547 0.104995
+0.0496564 0.0102282 0.0227918 0.0380739 0.0154389 0.0221806 0.0266796
+0.0330188 0.0163311 0.0376558 0.0247011 0.0176963 0.0256848 0.0327743
+0.0170607 0.0319777 0.0330936 0.0132839 0.0236856 0.0274002 0.0259022
+0.00935451 0.0254265 0.0111803 0.0171636 0.0260091 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 8 64 0 200 140 1 0 0;
 #X restore 181 119 graph;
 #X obj 678 252 bang~;
 #X obj 121 271 hsl 128 15 0.01 1 1 1 empty empty volume -2 -8 0 10
--262144 -1 -1 10700 0;
+-262144 -1 -1 11900 0;
 #X obj 546 179 *~;
 #X obj 727 308 tabwrite~ \$0-mag;
 #X obj 104 106 cnv 15 50 30 empty empty Player 0 12 0 14 -262144 -66577
@@ -61,7 +65,7 @@
 #X obj 19 404 oscilador;
 #X obj 389 408 aditiva;
 #X obj 91 955 adsr;
-#X obj 90 1261 fir;
+#X obj 18 1261 fir;
 #X obj 681 383 subtrativa;
 #X obj 678 635 subtrativanoise;
 #X obj 460 959 percursivo;
@@ -89,14 +93,14 @@
 #X obj 344 932 r out5;
 #X obj 606 934 r out4;
 #X obj 713 932 r out5;
-#X obj 430 1258 reverb;
+#X obj 321 1260 reverb;
 #X obj 237 1163 s out7;
 #X obj 346 1161 s out8;
 #X obj 606 1169 s out7;
 #X obj 715 1167 s out8;
-#X obj 429 1495 throw~ out;
-#X obj 692 1261 wah;
-#X obj 692 1579 throw~ out;
+#X obj 320 1497 throw~ out;
+#X obj 529 1259 wah;
+#X obj 529 1570 throw~ out;
 #X obj 18 589 throw~ out3;
 #X obj 389 781 throw~ out3;
 #X obj 679 881 throw~ out3;
@@ -105,10 +109,10 @@
 #X obj 429 1226 catch~ out6;
 #X obj 461 1170 throw~ out6;
 #X obj 91 1164 throw~ out6;
-#X obj 1008 1256 flanger;
-#X obj 1009 1471 throw~ out;
-#X obj 1239 1341 throw~ out;
-#X obj 1238 1227 phaser;
+#X obj 815 1254 flanger;
+#X obj 814 1462 throw~ out;
+#X obj 1005 1461 throw~ out;
+#X obj 984 1251 phaser;
 #X connect 13 0 25 0;
 #X connect 13 1 26 0;
 #X connect 14 0 27 0;
